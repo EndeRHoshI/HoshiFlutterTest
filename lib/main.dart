@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 // 配置环境和初步入门，可参考这篇文章：https://mp.weixin.qq.com/s/WFSYzk6LvtzERllIpOW-0A
+// Android 到 Flutter 的迁移：https://mp.weixin.qq.com/s/gLWjcgEVpHL8BehJAet5gQ
+// 遇到的一些配置环境的问题（镜像相关）：https://blog.csdn.net/lepaitianshi/article/details/127299854
 void main() {
   runApp(const MyApp());
 }
