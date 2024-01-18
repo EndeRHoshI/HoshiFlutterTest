@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+// 配置环境和初步入门，可参考这篇文章：https://mp.weixin.qq.com/s/WFSYzk6LvtzERllIpOW-0A
 void main() {
   runApp(const MyApp());
 }
@@ -67,6 +68,11 @@ class _MyHomePageState extends State<MyHomePage> {
       _counter++;
     });
   }
+  void _decrementCounter() {
+    setState(() {
+      _counter--;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -115,10 +121,21 @@ class _MyHomePageState extends State<MyHomePage> {
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
+      floatingActionButton: Column(
+        mainAxisAlignment: MainAxisAlignment.end,
+        children: [
+          FloatingActionButton.extended(
+            onPressed: _incrementCounter,
+            icon: const Icon(Icons.add),
+            label: const Text('Increment'),
+          ),
+          const SizedBox(height: 10),
+          FloatingActionButton.extended(
+            onPressed: _decrementCounter,
+            icon: const Icon(Icons.remove),
+            label: const Text('Decrement'),
+          )
+        ],
       ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
